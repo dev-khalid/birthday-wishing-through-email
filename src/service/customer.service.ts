@@ -1,5 +1,4 @@
-import { Customer } from "../entities/customer";
-import AppDataSource from "../config/db-config";
+import { Customer } from "../entities/customer"; 
 class CustomerService {
   constructor() {
     console.log("🚀Initialized CustomerService");
