@@ -11,6 +11,7 @@ import appRoutes from "./route";
 import NotFound from "./custom-errors/NotFound";
 import ErrorHandler from "./custom-errors/ErrorHandler";
 import AppDataSource from "./config/db-config";
+import bodyParser from "body-parser";
 
 dotenv.config();
 class App {
@@ -25,7 +26,9 @@ class App {
     this._initializeProviders();
   }
 
-  private _plugins(): void {}
+  private _plugins(): void {
+    this._application.use(bodyParser.json({ limit: "50mb" }));
+  }
   private _routes(): void {
     this._application.use((req, res, next) => {
       console.log(`Hitting url: `, req.method, req.originalUrl);
