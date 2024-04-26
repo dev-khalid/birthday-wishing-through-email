@@ -12,6 +12,7 @@ import NotFound from "./custom-errors/NotFound";
 import ErrorHandler from "./custom-errors/ErrorHandler";
 import AppDataSource from "./config/db-config";
 import bodyParser from "body-parser";
+import CronService from "./service/cron.service";
 
 dotenv.config();
 class App {
@@ -63,6 +64,8 @@ class App {
         console.log(e);
         console.log("❌ Error connecting database...");
       });
+
+    new CronService();
   }
 
   public app(): Application {

@@ -1,9 +1,5 @@
-type TMailData = {
-  from: string;
-  to: string;
-  subject: string;
-  html: string;
-};
+import { TEmailContext, TMailData } from "../types";
+
 class EmailService {
   constructor() {
     this.mimicConnectionPool();
@@ -21,13 +17,14 @@ class EmailService {
   mimicConnectionPool() {
     return true;
   }
-  async mimicSendingEmail(to: string, emailTemplate: string) {
+  async mimicSendingEmail(body: TEmailContext) {
     const mailData: TMailData = {
       from: "team@teamfriends.co.jp", // sender address
-      to, // list of receivers
+      to: body?.to, // list of receivers
       subject: `Happy Birthday!`,
-      html: emailTemplate,
+      html: body.emailTemplate,
     };
     return await this.send(mailData);
   }
 }
+export default EmailService;
