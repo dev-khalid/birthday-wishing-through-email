@@ -4,12 +4,13 @@ import { Customer } from "../entities/customer";
 import moment from "moment";
 import AppDataSource from "../config/db-config";
 import { uniqBy } from "lodash";
+import { ISO_DATE_FORMAT } from "../constants";
 
 export function createRandomCustomer(): Customer {
   return {
     name: faker.internet.displayName(),
     email: faker.internet.email(),
-    birthday: moment(faker.date.birthdate()).format("YYYY-MM-DD") as unknown,
+    birthday: moment(faker.date.birthdate()).format(ISO_DATE_FORMAT) as unknown,
   } as Customer;
 }
 

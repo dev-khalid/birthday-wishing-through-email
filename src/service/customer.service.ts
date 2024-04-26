@@ -11,6 +11,14 @@ class CustomerService {
       ...body,
     };
   }
+
+  async findCustomersByBirthday(birthday: Date) {
+    return await Customer.find({
+      where: {
+        birthday,
+      },
+    });
+  }
 }
 
 export default CustomerService;
