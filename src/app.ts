@@ -10,6 +10,7 @@ import dotenv from "dotenv";
 import appRoutes from "./route";
 import NotFound from "./custom-errors/NotFound";
 import ErrorHandler from "./custom-errors/ErrorHandler";
+import AppDataSource from "./config/db-config";
 
 dotenv.config();
 class App {
@@ -19,6 +20,9 @@ class App {
   constructor() {
     this._application = express();
     this._port = process.env.PORT || 5000;
+    this._plugins();
+    this._routes();
+    this._initializeProviders();
   }
 
   private _plugins(): void {}
@@ -47,6 +51,17 @@ class App {
     this._application.use(ErrorHandler);
   }
 
+  private _initializeProviders() {
+    AppDataSource.initialize()
+      .then(() => {
+        console.log("✅ Database connection established!");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("❌ Error connecting database...");
+      });
+  }
+
   public app(): Application {
     return this._application;
   }
@@ -67,4 +82,4 @@ class App {
     server.on("listening", onListening);
   }
 }
-export default App
+export default App;
