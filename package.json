@@ -1,0 +1,29 @@
+{
+  "name": "birthday-email-notification",
+  "version": "1.0.0",
+  "description": "Birthday Wishing Through Email",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "prod": "node dist/index.js",
+    "build": "tsc"
+  },
+  "keywords": [
+    "Birthday",
+    "Wishing",
+    "Through",
+    "Email"
+  ],
+  "author": "Khalid Hossain",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "tsx": "^4.7.3",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}
