@@ -8,7 +8,7 @@ class CronService {
   private readonly customerService = new CustomerService();
   constructor() {
     cron.schedule("0 0 0 * * *", () => {
-      //define task here
+      this.birthdayWishTask()
     });
   }
 
