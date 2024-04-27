@@ -33,25 +33,17 @@ This project provides (brief description of your project's functionality).
 
 ### API Endpoints
 
-- A comprehensive list of API endpoints with descriptions, HTTP methods, parameters, and response formats will be added here.
-
-**Note:** Replace placeholders like `npm run` with the appropriate command based on your project setup (e.g., `yarn dev`).
-
-### Technical Architecture
-
-A high-level architecture diagram will be included here to illustrate the system's components and interactions (create the diagram using Figma or Draw.io).
+- `URL`: /api/customer/register .
+- `METHOD`: POST
+- `Parameters`: `{
+    "name": "Jhon Doe",
+    "email": "johndoe@gmail.com",
+    "birthday": "2000-01-01"
+}`
 
 ### Code Quality
 
 This project adheres to clean code principles, DRY (Don't Repeat Yourself), and SOC (Separation of Concerns) for maintainability.
-
-### License
-
-This project is licensed under the (mention your license).
-
-### Email Template
-
-[![Birthday Email Template](/assets/images/birthday-email-template.png "Birthday Email Template ")](https://drive.google.com/file/d/1TEGLMonQq7qgCPfRcIa05KcA3V0KXIhl/view?usp=drive_link)
 
 ### Scripts (for reference)
 
@@ -69,3 +61,15 @@ This project is licensed under the (mention your license).
   "typeorm:revert-migration": "npm run typeorm -- -d src/config/db-config.ts migration:revert"
 }
 ```
+
+### Technical Architecture
+
+A high-level architecture diagram illustrate the system's components and interactions [![High Level Overview](/assets/images/high-level-architecture.jpg "High Level Overview")](https://drive.google.com/file/d/1rHkbdVXx1jMOUeQ6hlRHuX6krVbnOSuF/view?usp=sharing)
+
+
+
+### Email Template
+
+[![Birthday Email Template](/assets/images/birthday-email-template.png "Birthday Email Template ")](https://drive.google.com/file/d/1TEGLMonQq7qgCPfRcIa05KcA3V0KXIhl/view?usp=drive_link)
+
+
