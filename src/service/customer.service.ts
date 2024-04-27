@@ -7,7 +7,7 @@ class CustomerService {
     console.log("🚀Initialized CustomerService");
   }
   async createCustomer(body: Customer) {
-    const data = await Customer.insert(body);
+    const data = await AppDataSource.getRepository(Customer).insert(body);
     return {
       ...data.generatedMaps?.[0],
       ...body,
