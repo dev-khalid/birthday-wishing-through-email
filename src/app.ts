@@ -13,6 +13,7 @@ import ErrorHandler from "./custom-errors/ErrorHandler";
 import AppDataSource from "./config/db-config";
 import bodyParser from "body-parser";
 import CronService from "./service/cron.service";
+import "./service/queue.service";
 
 dotenv.config();
 class App {
