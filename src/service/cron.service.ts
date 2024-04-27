@@ -13,9 +13,9 @@ class CronService {
   private readonly customerService = new CustomerService();
 
   constructor() {
-    setTimeout(() => {
-      this.birthdayWishTask();
-    }, 5000);
+    // setTimeout(() => {
+    //   this.birthdayWishTask();
+    // }, 5000);
     cron.schedule(EveryNight12Am, () => {
       this.birthdayWishTask();
     });
